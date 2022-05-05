@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface EcolobyTests : XCTestCase
+@interface RNStarterTests : XCTestCase
 
 @end
 
-@implementation EcolobyTests
+@implementation RNStarterTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

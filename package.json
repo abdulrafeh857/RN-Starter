@@ -1,5 +1,5 @@
 {
-  "name": "@abdulrafeh857/Ecoloby-App",
+  "name": "@abdulrafeh857/RN-Starter",
   "description": "This is a project react native project for Ecoloby App.",
   "version": "1.0.1",
   "scripts": {
@@ -55,11 +55,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abdulrafeh857/Ecoloby-App.git"
+    "url": "https://github.com/abdulrafeh857/RN-Starter.git"
   },
   "author": "Abdul Rafeh",
   "license": "MIT",
-  "homepage": "https://github.com/abdulrafeh857/Ecoloby-App",
+  "homepage": "https://github.com/abdulrafeh857/RN-Starter",
   "keywords": [
     "react",
     "react-native",
