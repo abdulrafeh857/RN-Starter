@@ -1,22 +1,27 @@
-import * as React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import useStyles from './styles'
-import { WelcomeScreen, UserScreen } from '@Views'
-import { Appbar } from '@Organisms'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import useStyles from './styles';
+import { SplashScreen, WelcomeScreen, UserScreen } from '@Views';
+import { Appbar } from '@Organisms';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
-  const { headerHidden } = useStyles()
+  const { headerHidden } = useStyles();
 
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="Splash"
         screenOptions={{
-          header: props => <Appbar {...props} />,
+          header: props => <Appbar {...props} />
         }}>
+        <Stack.Screen
+          name="Splash"
+          component={SplashScreen}
+          {...headerHidden}
+        />
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}
@@ -25,7 +30,7 @@ const StackNavigator = () => {
         <Stack.Screen name="User" component={UserScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default StackNavigator
+export default StackNavigator;

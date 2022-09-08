@@ -1,13 +1,7 @@
 /* eslint-disable prettier/prettier */
-const dummy = () => {
-  var requestOptions = {
-    method: 'GET',
-    redirect: 'follow',
-  };
-
-  fetch('https://jsonplaceholder.typicode.com/todos/1', requestOptions)
-    .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+import axios from 'axios';
+const dummy = async () => {
+  let response = await axios.get('https://jsonplaceholder.typicode.com/users');
+  return response;
 };
 export default dummy;
