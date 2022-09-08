@@ -14,6 +14,7 @@
 		6172F2D35A4C3AA820D92908 /* libPods-RNStarter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-RNStarter.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-RNStarter-RNStarterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-RNStarter-RNStarterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D7334A3528CA7D0A009F0D20 /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7334A3428CA7D0A009F0D20 /* Fix.swift */; };
 		F0B0736E26E10C68000563AC /* SofiaPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736926E10C68000563AC /* SofiaPro-Bold.otf */; };
 		F0B0736F26E10C68000563AC /* SofiaPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736A26E10C68000563AC /* SofiaPro.otf */; };
 		F0B0737026E10C68000563AC /* SofiaPro-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736B26E10C68000563AC /* SofiaPro-SemiBold.otf */; };
@@ -61,6 +62,8 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-RNStarter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarter.debug.xcconfig"; path = "Target Support Files/Pods-RNStarter/Pods-RNStarter.debug.xcconfig"; sourceTree = "<group>"; };
 		C4F18B7EAA8647AFB134A050 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-RNStarter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNStarter.release.xcconfig"; path = "Target Support Files/Pods-RNStarter/Pods-RNStarter.release.xcconfig"; sourceTree = "<group>"; };
+		D7334A3128CA7CAD009F0D20 /* RNStarter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNStarter-Bridging-Header.h"; sourceTree = "<group>"; };
+		D7334A3428CA7D0A009F0D20 /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fix.swift; sourceTree = "<group>"; };
 		D9E9B5CDBF924216A8DD02C7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E3778AB5F0D4487484D0D9E8 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -142,6 +145,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D7334A3428CA7D0A009F0D20 /* Fix.swift */,
 				F0B0736926E10C68000563AC /* SofiaPro-Bold.otf */,
 				F0B0736C26E10C68000563AC /* SofiaPro-Light.otf */,
 				F0B0736D26E10C68000563AC /* SofiaPro-Medium.otf */,
@@ -154,6 +158,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
 				E871032668F54B2FAD77355C /* Resources */,
+				D7334A3128CA7CAD009F0D20 /* RNStarter-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -260,7 +265,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -435,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				D7334A3528CA7D0A009F0D20 /* Fix.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C97AB639B58BBB4B15BBE30 /* Pods-RNStarter-RNStarterTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -481,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D0AE47A65C8663E3B452821 /* Pods-RNStarter-RNStarterTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNStarterTests/Info.plist;
@@ -508,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C6KWJZS82X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -519,8 +528,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.starter.RNStarter;
 				PRODUCT_NAME = RNStarter;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNStarter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -534,6 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C6KWJZS82X;
 				INFOPLIST_FILE = RNStarter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,8 +555,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.starter.RNStarter;
 				PRODUCT_NAME = RNStarter;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNStarter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -606,8 +618,8 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -664,8 +676,8 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;

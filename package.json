@@ -17,7 +17,10 @@
     "start": "react-native start",
     "start:reset": "react-native start --reset-cache",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "appicon": "app-icon generate",
+    "appicon-ios": "app-icon generate --platforms=ios",
+    "appicon-android": "app-icon generate --platforms=android"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
@@ -26,7 +29,7 @@
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.27.2",
     "react": "17.0.2",
-    "react-native": "0.65.1",
+    "react-native": "0.68.3",
     "react-native-config": "^1.4.4",
     "react-native-paper": "^4.9.2",
     "react-native-responsive-dimensions": "^3.1.1",
