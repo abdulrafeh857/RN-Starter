@@ -1,4 +1,4 @@
-package com.rntemplatets;
+package com.rnstarter;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
