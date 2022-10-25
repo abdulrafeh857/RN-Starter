@@ -1,6 +1,6 @@
 {
   "name": "@abdulrafeh857/RN-Starter",
-  "description": "This is a project react native project for Ecoloby App.",
+  "description": "This is a react native project for RNStarter App.",
   "version": "1.0.1",
   "scripts": {
     "adb": "adb devices",
