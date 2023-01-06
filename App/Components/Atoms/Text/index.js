@@ -1,79 +1,124 @@
-import React from 'react'
-import {
-  Text as RNText,
-  TextStyle,
-  TextProps as RNTextProps,
-} from 'react-native'
-import { scaleFont } from '@Utils'
-import { Colors, FontFamily } from '@Theme'
+import {Text} from 'react-native';
+import React from 'react';
+import {Colors} from 'Theme';
 
-
-const Text = (props) => {
-  const {
-    children,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 = true,
-    w1,
-    w2,
-    w3,
-    w4 = true,
-    w5,
-    p,
-    bold,
-    italic,
-    center,
-    justify,
-    selfCenter,
-    style,
-    ...rest
-  } = props
-
-  let textStyle = {
-    color: Colors.text,
-  }
-
-  if (h1) {
-    textStyle.fontSize = scaleFont(48)
-    textStyle.lineHeight = scaleFont(48)
-  } else if (h2) {
-    textStyle.fontSize = scaleFont(34)
-    textStyle.lineHeight = scaleFont(34)
-  } else if (h3) {
-    textStyle.fontSize = scaleFont(24)
-    textStyle.lineHeight = scaleFont(24)
-  } else if (h4) {
-    textStyle.fontSize = scaleFont(20)
-    textStyle.lineHeight = scaleFont(20)
-  } else if (p) {
-    textStyle.fontSize = scaleFont(14)
-    textStyle.lineHeight = scaleFont(14)
-  } else if (h5) {
-    textStyle.fontSize = scaleFont(16)
-    textStyle.lineHeight = scaleFont(16)
-  }
-
-  if (w1) textStyle.fontFamily = FontFamily.Bold
-  else if (w2) textStyle.fontFamily = FontFamily.SemiBold
-  else if (w3) textStyle.fontFamily = FontFamily.Medium
-  else if (w5) textStyle.fontFamily = FontFamily.Light
-  else if (w4) textStyle.fontFamily = FontFamily.Regular
-
-  if (bold) textStyle.fontWeight = 'bold'
-  if (italic) textStyle.fontStyle = 'italic'
-  if (center) textStyle.textAlign = 'center'
-  if (justify) textStyle.textAlign = 'justify'
-  if (selfCenter) textStyle.alignSelf = 'center'
-
-  if (style) textStyle = { ...textStyle, ...style }
-
+const Heading = (props) => {
+  const {children, myStyle} = props;
   return (
-    <RNText style={textStyle} {...rest}>
+    <Text
+      style={{
+        fontFamily: 'SofiaPro-Bold',
+        color: '#3f3f3f',
+        fontSize: 22,
+        lineHeight: 22,
+        ...myStyle,
+      }}
+      {...props}>
       {children}
-    </RNText>
-  )
-}
+    </Text>
+  );
+};
 
-export default Text
+const SubHeading = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro-SemiBold',
+        color: '#3f3f3f',
+        fontSize: 18,
+        lineHeight: 18,
+        ...myStyle,
+      }}
+      {...props}>
+      {children}
+    </Text>
+  );
+};
+
+const Title = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro',
+        color: '#3f3f3f',
+        fontSize: 18,
+        lineHeight: 18,
+        ...myStyle,
+      }}
+      {...props}>
+      {children}
+    </Text>
+  );
+};
+
+const Price = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro',
+        color: Colors.primary,
+        fontSize: 17,
+        lineHeight: 17,
+        ...myStyle,
+      }}
+      {...props}>
+      £{children}
+    </Text>
+  );
+};
+
+const Normal = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro',
+        fontSize: 15,
+        lineHeight: 15,
+        color: '#3f3f3f',
+        ...myStyle,
+      }}
+      {...props}>
+      {children}
+    </Text>
+  );
+};
+
+const Time = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro',
+        fontSize: 18,
+        lineHeight: 18,
+        color: Colors.primary,
+        ...myStyle,
+      }}
+      {...props}>
+      {children}
+    </Text>
+  );
+};
+
+const Caption = (props) => {
+  const {children, myStyle} = props;
+  return (
+    <Text
+      style={{
+        fontFamily: 'SofiaPro-Light',
+        color: '#1119',
+        fontSize: 15,
+        lineHeight: 15,
+        ...myStyle,
+      }}
+      {...props}>
+      {children}
+    </Text>
+  );
+};
+
+export {Price, Caption, Heading, SubHeading, Title, Time, Normal};

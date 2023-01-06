@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "504863894638",
+    "project_id": "drop-7ce8a",
+    "storage_bucket": "drop-7ce8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504863894638:android:c6395aa25e0f4387f24a7f",
+        "android_client_info": {
+          "package_name": "com.droponline.co.uk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504863894638-p80j0gn7rum4noa2hmsikdsa7sb665qi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.droponline.co.uk",
+            "certificate_hash": "377a6056d8f8713a7075443dc4783a832e004821"
+          }
+        },
+        {
+          "client_id": "504863894638-siff16btu9bq6ue41b9vr1fns7fcds90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJQ7u5l_43Gp0uiT2BEVlW2Dzk1oZWY3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504863894638-siff16btu9bq6ue41b9vr1fns7fcds90.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "504863894638-55tqh17m2k3g1r4g93rqkhcsroqdmasa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.drop.online.co.uk.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

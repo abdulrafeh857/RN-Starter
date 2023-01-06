@@ -21,6 +21,7 @@ module.exports = {
           '@Redux': ['./App/Store/Redux'],
           '@Theme': ['./App/Theme'],
           '@Utils': ['./App/Utils'],
+          '@Actions': ['./App/Store/Actions'],
         },
       },
     ],
