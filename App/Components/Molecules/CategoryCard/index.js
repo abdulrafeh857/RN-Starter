@@ -19,7 +19,7 @@ const Category = (props) => {
         <ImageBackground
           imageStyle={styles.rootImage}
           style={styles.root1}
-          source={image}
+          source={image ? image : null} 
           resizeMode="contain"
           resizeMethod="resize">
           <Card style={styles.card} vPad={false} hPad={false} onPress={onPress}>

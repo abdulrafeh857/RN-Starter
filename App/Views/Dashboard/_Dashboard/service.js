@@ -1,14 +1,14 @@
 // Imports
-import React, {useEffect, useState, useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useFocusEffect} from '@react-navigation/native';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useFocusEffect } from '@react-navigation/native';
 import getVendors from '../../../Store/Actions/Vendors';
 import messaging from '@react-native-firebase/messaging';
 import sendFCMTokenService from 'Services/FCMToken';
-import {RefreshControl} from 'react-native';
-import {loadMore} from 'Services/Vendors';
+import { RefreshControl } from 'react-native';
+import { loadMore } from 'Services/Vendors';
 import showAlert from '../../../Store/Actions/ShowAlert';
-import {requestNotifications} from 'react-native-permissions';
+import { requestNotifications } from 'react-native-permissions';
 import Preferences from 'Config/preferences';
 
 const preferences = new Preferences();
@@ -23,21 +23,21 @@ const useService = () => {
   const [next, setNext] = useState(vendors?.next);
   const [notification, setNotification] = useState(null);
 
-  const {vendors, loadingVendors} = useSelector((state) => state.Vendors);
-  const {orders, loadingOrders} = useSelector((state) => state.Orders);
+  const { vendors, loadingVendors } = useSelector(state => state.Vendors);
+  const { orders, loadingOrders } = useSelector(state => state.Orders);
 
   // Fetch Vendors on Focus
   useFocusEffect(
     useCallback(() => {
       console.debug('Fetch vendors on focus.');
       dispatch(getVendors());
-    }, []),
+    }, [])
   );
 
   // Fetch Vendors on Interval
   useEffect(() => {
     const intervalId = setInterval(function () {
-      console.debug('Fetch vendors on interval.');
+      // console.debug('Fetch vendors on interval.');
       dispatch(getVendors());
       fetchOngoingOrders();
     }, 5000);
@@ -52,16 +52,16 @@ const useService = () => {
   // Check Rating Notification on Focus
   useFocusEffect(
     useCallback(() => {
-      preferences.getNotification().then((not) => setNotification(not));
-    }, []),
+      preferences.getNotification().then(not => setNotification(not));
+    }, [])
   );
 
   // Handle notifications if app already open
   useEffect(() => {
-    const unsubscribe = messaging().onMessage(async (remoteMessage) => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
       console.debug(
         'Notification handled in the foreground.',
-        remoteMessage.notification,
+        remoteMessage.notification
       );
       dispatch(
         showAlert({
@@ -74,10 +74,10 @@ const useService = () => {
               name: 'Okay',
               onPress: () => {
                 dispatch(showAlert(null));
-              },
-            },
-          ],
-        }),
+              }
+            }
+          ]
+        })
       );
     });
 
@@ -88,20 +88,20 @@ const useService = () => {
   useFocusEffect(
     useCallback(() => {
       fetchOngoingOrders();
-    }, [loadingOrders]),
+    }, [loadingOrders])
   );
 
   function fetchOngoingOrders() {
-    console.debug('Fetching ongoing orders.');
+    // console.debug('Fetching ongoing orders.');
     if (!loadingOrders && orders?.results?.length > 0) {
       const _ongoing = orders.results.filter(
-        (order) =>
+        order =>
           order.status === 'Pending' ||
           order.status === 'Vendor Confirmed' ||
           order.status === 'Ready For Delivery' ||
           order.status === 'Delivery Confirmed' ||
           order.status === 'Driver Arrived' ||
-          order.status === 'Driver Enroute',
+          order.status === 'Driver Enroute'
       );
 
       setOngoing(_ongoing.length);
@@ -119,7 +119,7 @@ const useService = () => {
   const loadMoreVendors = () => {
     console.debug('Loading more Vendors.');
     if (next) {
-      loadMore(next).then((response) => {
+      loadMore(next).then(response => {
         setVendorData(vendorData.concat(response.results));
         setNext(response.next);
       });
@@ -130,7 +130,7 @@ const useService = () => {
 
   // Send FCM Token to API
   function sendToken(token) {
-    sendFCMTokenService({registration_id: token});
+    sendFCMTokenService({ registration_id: token });
   }
 
   // Pull down to Refresh logic
@@ -148,23 +148,28 @@ const useService = () => {
   };
 
   const getToken = () => {
+    console.debug('\n\n\n getToken Token: ');
+
     messaging()
       .getToken()
-      .then((token) => {
+      .then(token => {
         console.debug('FCM Token: ', token);
         sendToken(token);
+      })
+      .catch(err => {
+        console.debug('FCM Token Error: ', err);
       });
   };
 
   // Get FCM Token and Send to API
   useEffect(() => {
-    requestNotifications(['alert', 'badge', 'sound']).then(({status}) => {
+    requestNotifications(['alert', 'badge', 'sound']).then(({ status }) => {
       if (status === 'granted') {
         getToken();
       }
     });
 
-    return messaging().onTokenRefresh((token) => {
+    return messaging().onTokenRefresh(token => {
       console.debug('FCM Token Refreshed: ', token);
       sendToken(token);
     });
@@ -177,7 +182,7 @@ const useService = () => {
     ongoing,
     notification,
     refreshControl,
-    loadMoreVendors,
+    loadMoreVendors
   };
 };
 

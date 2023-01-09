@@ -1,11 +1,11 @@
 import styles from './styles';
-import React, {useState, useEffect} from 'react';
-import {Dimensions} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Dimensions } from 'react-native';
 import getBannersService from 'Services/Banners';
-import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
-import {TouchableRipple} from 'react-native-paper';
+import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import { TouchableRipple } from 'react-native-paper';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const renderSwiper = (item, parallaxProps) => {
   const banner = item.item;
@@ -18,10 +18,10 @@ const renderSwiper = (item, parallaxProps) => {
       style={styles.banner}>
       <>
         <ParallaxImage
-          style={{resizeMode: 'contain'}}
+          style={{ resizeMode: 'contain' }}
           containerStyle={styles.imageStyle}
           resizeMode={'contain'}
-          source={{uri: banner.image}}
+          source={{ uri: banner?.image ? banner?.image : null }}
           parallaxFactor={0.75}
           {...parallaxProps}
         />
@@ -34,7 +34,7 @@ const _Swiper = () => {
   const [banners, setBanners] = useState([{}, {}, {}]);
 
   useEffect(() => {
-    getBannersService().then((response) => {
+    getBannersService().then(response => {
       setBanners(response.data.results);
     });
   }, []);

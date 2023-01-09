@@ -1,46 +1,48 @@
 // Imports
-import {View, FlatList} from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {Card, CategoryCard as Category} from '@Molecules';
+import { View, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Card, CategoryCard as Category } from '@Molecules';
 import styles from './styles';
 import utils from './utils';
 import * as TEXT from '@Atoms/Text';
 import getTagsService from 'Services/Tags';
 import getVendorsSearchService from 'Services/VendorsSearch';
 
-const CategorySection = (props) => {
+const CategorySection = props => {
   const search = props.search || false;
   const doNothing = props.doNothing || false;
 
   const [isLoading, setIsLoading] = useState(null);
   const [tags, setTags] = useState([
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
-    {name: '', image: ''},
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null },
+    { name: '', image: null }
   ]);
 
-  const fetchCategoryData = (name) => {
+  const fetchCategoryData = name => {
     getVendorsSearchService(name)
-      .then((response) => {
+      .then(response => {
         setIsLoading(null);
 
-        if (search) props.onFetchData({results: response.results, name: name});
-        else props.navigation.navigate('Search', {data: response, name: name});
+        if (search)
+          props.onFetchData({ results: response.results, name: name });
+        else
+          props.navigation.navigate('Search', { data: response, name: name });
       })
-      .catch((error) => {
+      .catch(error => {
         setIsLoading(null);
         console.log(error.response);
       });
   };
 
-  const renderCategories = ({item}) => {
-    const {name, image, color} = item;
+  const renderCategories = ({ item }) => {
+    const { name, image, color } = item;
     return (
       <View
         style={
@@ -50,7 +52,7 @@ const CategorySection = (props) => {
           loading={name === isLoading}
           color={color}
           title={name}
-          image={{uri: image}}
+          image={{ uri: image ? image : null }}
           onPress={() => {
             setIsLoading(name);
             fetchCategoryData(name);
@@ -62,7 +64,7 @@ const CategorySection = (props) => {
 
   useEffect(() => {
     if (!doNothing)
-      getTagsService().then((response) => {
+      getTagsService().then(response => {
         setTags(response.data.results);
       });
   }, []);
@@ -78,10 +80,10 @@ const CategorySection = (props) => {
             <FlatList
               numColumns={4}
               showsVerticalScrollIndicator={false}
-              contentContainerStyle={{alignItems: 'center'}}
+              contentContainerStyle={{ alignItems: 'center' }}
               renderItem={renderCategories.bind(this)}
               data={tags}
-              keyExtractor={(item) => item.key}
+              keyExtractor={item => item.key}
             />
           </View>
         </Card>
@@ -96,9 +98,9 @@ const CategorySection = (props) => {
               horizontal
               showsHorizontalScrollIndicator={false}
               renderItem={renderCategories.bind(this)}
-              contentContainerStyle={{alignItems: 'center', paddingRight: 10}}
+              contentContainerStyle={{ alignItems: 'center', paddingRight: 10 }}
               data={tags}
-              keyExtractor={(item) => item.key}
+              keyExtractor={item => item.key}
             />
           </View>
         </Card>

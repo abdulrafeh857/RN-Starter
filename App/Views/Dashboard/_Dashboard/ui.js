@@ -1,23 +1,23 @@
 // Imports
-import {FlatList, View, StatusBar} from 'react-native';
+import { FlatList, View, StatusBar, Text } from 'react-native';
 import React from 'react';
 import styles from './styles';
-import {Loader, Screen, Alert} from '@Atoms';
-import {CategorySection, Header, LocationInvalid} from '@Organisms';
+import { Loader, Screen, Alert } from '@Atoms';
+import { CategorySection, Header, LocationInvalid } from '@Organisms';
 import {
   Section,
   Swiper,
   VendorCard,
   RatingPopup,
-  OngoingOrders,
+  OngoingOrders
 } from '@Molecules';
 import Placeholder from './placeholder';
 import useService from './service';
 import closeToBottom from 'Utils/Common/CloseToBottom';
-import {Colors} from 'Theme';
+import { Colors } from 'Theme';
 
 // Main functional component
-const Home = (props) => {
+const Home = props => {
   const {
     vendorData,
     loadingVendors,
@@ -25,7 +25,7 @@ const Home = (props) => {
     ongoing,
     notification,
     refreshControl,
-    loadMoreVendors,
+    loadMoreVendors
   } = useService();
 
   function renderVendorCard(item) {
@@ -48,7 +48,7 @@ const Home = (props) => {
       <Screen
         refreshControl={refreshControl}
         scrollEventThrottle={1}
-        onScroll={({nativeEvent}) => {
+        onScroll={({ nativeEvent }) => {
           closeToBottom(nativeEvent) && loadMoreVendors();
         }}>
         <Header {...props} />
@@ -58,7 +58,8 @@ const Home = (props) => {
         {loadingVendors ? (
           // Loading State
           <Placeholder {...props} />
-        ) : vendorData?.length === 0 ? (
+        ) : // <Text>wfegrtgnhtrewrghn</Text>
+        vendorData?.length === 0 ? (
           // Invalid State
           renderLocationInvalid()
         ) : (
@@ -77,12 +78,12 @@ const Home = (props) => {
                 style={styles.vendorListItemStyle}
                 contentContainerStyle={styles.vendorListStyle}
                 renderItem={renderVendorCard.bind(this)}
-                ItemSeparatorComponent={() => <View style={{height: 8}} />}
+                ItemSeparatorComponent={() => <View style={{ height: 8 }} />}
                 data={vendorData}
               />
             )}
             {next && (
-              <View style={{paddingVertical: 10}}>
+              <View style={{ paddingVertical: 10 }}>
                 <Loader color={Colors.primary} />
               </View>
             )}

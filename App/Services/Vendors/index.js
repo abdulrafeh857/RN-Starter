@@ -16,7 +16,7 @@ const getVendorsService = () => {
           return VendorsFormatter.getVendors(response.data);
         })
         .catch((error) => {
-          console.error('Error getting vendors', error.response);
+          console.error('Error getting vendors', error);
         });
     }
   });
