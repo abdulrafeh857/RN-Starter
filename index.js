@@ -13,6 +13,6 @@ LogBox.ignoreLogs([
     'new NativeEventEmitter()',
     'Require cycle',
     'Each child in a list'
-
   ]);
+  console.error = error => error.apply;
 AppRegistry.registerComponent(appName, () => App);
