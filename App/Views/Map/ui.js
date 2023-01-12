@@ -1,19 +1,19 @@
 // Imports
-import {View, StatusBar} from 'react-native';
+import { View, StatusBar, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React from 'react';
 import styles from './styles';
-import {Colors} from 'Theme';
+import { Colors } from 'Theme';
 import * as TEXT from '@Atoms/Text';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import LottieView from 'lottie-react-native';
-import {Button, SearchToolbar} from '@Atoms';
+import { Button, SearchToolbar } from '@Atoms';
 import useService from './service';
 import utils from './utils';
-import {TouchableRipple, IconButton} from 'react-native-paper';
+import { TouchableRipple, IconButton } from 'react-native-paper';
 
 // Main functional component
-const Map = (props) => {
+const Map = props => {
   const {
     noGPS,
     onRegionChangeComplete,
@@ -23,7 +23,7 @@ const Map = (props) => {
     region,
     address,
     confirmingAddress,
-    mapRef,
+    mapRef
   } = useService(props);
 
   let disabled = address === 'Finding location...';
@@ -39,7 +39,7 @@ const Map = (props) => {
           loadingIndicatorColor={Colors.primary}
           onRegionChangeComplete={onRegionChangeComplete}
           style={styles.map}
-          provider={PROVIDER_GOOGLE}
+          provider={Platform.OS == 'android' ? PROVIDER_GOOGLE : null}
           initialRegion={region}
         />
         <View style={styles.markerFixed}>
@@ -61,7 +61,7 @@ const Map = (props) => {
             onSearchPress={() => {
               console.debug('Navigate to Search Map.');
               props.navigation.navigate('SearchMap', {
-                fromCheckout: fromCheckout,
+                fromCheckout: fromCheckout
               });
             }}
             {...props}
@@ -76,7 +76,7 @@ const Map = (props) => {
         {/* Bottom View */}
         <View style={styles.bottomContainer}>
           <View style={styles.bottomChild}>
-            <TEXT.SubHeading myStyle={{color: 'white'}}>
+            <TEXT.SubHeading myStyle={{ color: 'white' }}>
               {utils.deliveryAddress}
             </TEXT.SubHeading>
             <View style={styles.addressContainer}>
