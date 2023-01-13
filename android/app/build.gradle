@@ -134,8 +134,8 @@ android {
         applicationId "com.droponline.co.uk"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4 // Increment before Pushing to Play Store
-        versionName "1.0.4" // User will see this Version
+        versionCode 5 // Increment before Pushing to Play Store
+        versionName "1.0.5" // User will see this Version
         multiDexEnabled true
     }
     splits {
@@ -198,7 +198,7 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation 'com.google.android.gms:play-services-wallet:18.1.3'
-    implementation 'com.android.support:appcompat-v7:24.1.1'
+    // implementation 'com.android.support:appcompat-v7:24.1.1'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
@@ -207,7 +207,11 @@ dependencies {
     
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-analytics'
-    
+    implementation ("androidx.appcompat:appcompat:1.3.1") {
+    version {
+        strictly '1.3.1'
+    }
+}
     androidTestImplementation('com.wix:detox:+')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
