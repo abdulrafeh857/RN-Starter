@@ -9,7 +9,7 @@ const styles = {
       paddingBottom: height * 0.5,
     },
     rootViewStyle: {
-      height: height * 0.225,
+      height: height * 0.22,
       width: '100%',
       backgroundColor: Colors.primary,
     },
@@ -48,7 +48,7 @@ const styles = {
   },
   screen: {
     rootViewStyle: {
-      height: height * 0.07,
+      height: height * 0.06,
       marginBottom: 1,
       width: '100%',
       flexDirection: 'row',

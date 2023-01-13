@@ -71,7 +71,7 @@ const useService = (props) => {
     setIsLoading(true);
 
     let {paymentMethod, error} = await createPaymentMethod({
-      type: 'Card',
+      paymentMethodType: 'Card',
       billingDetails,
     });
 

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -35,28 +35,20 @@
 			</dict>
 		</dict>
 	</dict>
-  
 	<key>NSCameraUsageDescription</key>
 	<string>Drop requires access to your phone’s camera for pictures.</string>
-  
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Drop requires location permission to suggest the nearest restaurants and their amazing deals.</string>
-  
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Drop requires location permission to suggest the nearest restaurants and their amazing deals.</string>
-  
-  <key>NSLocationUsageDescription</key>
-  <string>Drop requires location permission to suggest the nearest restaurants and their amazing deals.</string>
-  
+	<key>NSLocationUsageDescription</key>
+	<string>Drop requires location permission to suggest the nearest restaurants and their amazing deals.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Drop requires location permission to suggest the nearest restaurants and their amazing deals.</string>
-  
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Drop requires access to your phone’s gallery for pictures.</string>
-  
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-  
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

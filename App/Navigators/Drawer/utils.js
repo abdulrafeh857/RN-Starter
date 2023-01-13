@@ -33,11 +33,15 @@ const utils = {
       icon: 'arrow-back',
       name: 'Log Out',
     },
+    {
+      icon: 'person-remove',
+      name: 'Delete Account',
+    },
   ],
   more: [
     {name: 'Privacy policy'},
     {name: 'Terms & Conditions'},
-    {name: 'Return Policy'},
+    // {name: 'Return Policy'},
     {name: 'About us'},
   ],
   Privacy: {

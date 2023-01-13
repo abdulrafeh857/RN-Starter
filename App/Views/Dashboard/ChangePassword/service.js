@@ -11,20 +11,25 @@ const useService = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateDetails = () => {
+  const updateDetails = async() => {
     setIsLoading(true);
-    changePasswordService({
+   await changePasswordService({
       old_password: password,
       new_password1: newPassword,
       new_password2: repeatPassword,
     }).then((response) => {
-      if (response.status === 200) {
+      console.log('\n\n  updateDetails response', response);
+      if (response?.status === 200) {
         setIsLoading(false);
         props.navigation.navigate('Home');
       } else {
         setIsLoading(false);
         setError(response);
       }
+    }).catch((error) => {
+      setIsLoading(false);
+      setError(error);
+      console.log('\n\n  updateDetails error', error);
     });
   };
 

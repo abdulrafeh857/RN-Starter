@@ -32,6 +32,7 @@ import SearchScreen from 'Views/Dashboard/Search';
 import OrdersScreen from 'Views/Dashboard/Orders';
 import WebViewScreen from 'Views/Dashboard/WebView';
 import ChangePasswordScreen from 'Views/Dashboard/ChangePassword';
+import DeleteAccountScreen from 'Views/Dashboard/DeleteAccount';
 import ForgotPasswordScreen from 'Views/Dashboard/ForgotPassword';
 
 // Declare a Stack of Screens/Components
@@ -126,6 +127,11 @@ const StackNavigator = () => {
         <Stack.Screen
           name="ChangePassword"
           component={ChangePasswordScreen}
+          options={styles.headerHidden}
+        />
+        <Stack.Screen
+          name="DeleteAccount"
+          component={DeleteAccountScreen}
           options={styles.headerHidden}
         />
         <Stack.Screen

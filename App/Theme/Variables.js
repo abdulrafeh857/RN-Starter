@@ -5,7 +5,7 @@
  * That allows to change them more easily later on.
  */
 
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
 const ratio = Dimensions.get('screen').height / 667;
 
@@ -25,6 +25,7 @@ export const Colors = {
   background: '#f5f5f5',
   success: '#28a745',
   error: '#dc3545',
+  redsoft: '#f77777'
 };
 
 /**
@@ -35,5 +36,5 @@ export const FontSize = {
   title: ratio * 24,
   subTitle: ratio * 19,
   body: ratio * 15,
-  caption: ratio * 12,
+  caption: ratio * 12
 };

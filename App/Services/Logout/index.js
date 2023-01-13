@@ -4,16 +4,19 @@ import messaging from '@react-native-firebase/messaging';
 const logoutService = () => {
   return api
     .post('logout/')
-    .then((response) => {
+    .then(response => {
       return messaging()
         .deleteToken()
-        .then((res) => {
-          console.debug('Token deleted.');
+        .then(res => {
+          console.debug('Token deleted.', res);
           return response;
         })
-        .catch((err) => console.debug('Token delete failed.', err));
+        .catch(err => {
+          console.debug('Token delete failed.', err);
+          return response;
+        });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err.message || err);
     });
 };
