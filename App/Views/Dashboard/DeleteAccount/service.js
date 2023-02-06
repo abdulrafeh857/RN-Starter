@@ -4,8 +4,9 @@ import { useState } from 'react';
 import changePasswordService from 'Services/ChangePassword';
 import { Feedback } from 'Components/Atoms';
 import Preferences from 'Config/preferences';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import getOrders from 'Store/Actions/Orders';
+import deleteAccountService from 'Services/DeleteAccount';
 
 const useService = props => {
   const preferences = new Preferences();
@@ -13,13 +14,15 @@ const useService = props => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  const deleteAccount = () => {
-    logoutService().then(response => {
-      console.log('response', response);
-      if (response.status === 200) {
-        console.debug('Logout Success.');
-        Feedback.success('Logged out successfully.', 'OK');
+  const { users } = useSelector(state => state.Users);
+  console.log('\n\n\n\n    user DATA', JSON.stringify(users, null, 2));
+  const deleteAccount = async() => {
+    let id = users && users.id;
+    await deleteAccountService(id).then(response => {
+      console.log('\n\n\  response deleteAccountService == ', response);
+      if (response.status === 200 || response.status === 204) {
+        console.debug('Delete Success.');
+        Feedback.success('Account Deleted successfully.', 'OK');
 
         preferences.removeToken().then(() => {
           console.debug('Async Storage cleared.');

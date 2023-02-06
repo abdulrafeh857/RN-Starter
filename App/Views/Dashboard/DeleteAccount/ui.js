@@ -4,7 +4,7 @@ import { ScrollView, View } from 'react-native';
 import styles from './styles';
 import utils from './utils';
 import useService from './service';
-import { Input, Button, Toolbar } from '@Atoms';
+import { Input, Button, Toolbar, Feedback } from '@Atoms';
 import { HelperText } from 'react-native-paper';
 import { Colors } from 'Theme';
 
@@ -61,7 +61,14 @@ const ChangePassword = props => {
           position: 'absolute',
           backgroundColor: Colors.redsoft
         }}
-        onPress={deleteAccount}
+        onPress={()=>{
+          if (password) {
+            deleteAccount();
+          }
+          else{
+            Feedback.error('Please enter your password.', 'OK');
+          }
+        }}
       />
     </View>
   );
