@@ -16,7 +16,7 @@
 		9735A4AB413ED2006BF9D1B5 /* libPods-Drop-DropTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ACAE8E960DAA914B5067EF3 /* libPods-Drop-DropTests.a */; };
 		D7334A3528CA7D0A009F0D20 /* Fix.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7334A3428CA7D0A009F0D20 /* Fix.swift */; };
 		D75403702964268D0031B34E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754036F2964268D0031B34E /* File.swift */; };
-		D7540376296443380031B34E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7540375296443380031B34E /* GoogleService-Info.plist */; };
+		D76FC08B299388DB0067447F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D76FC08A299388DB0067447F /* GoogleService-Info.plist */; };
 		F0B0736E26E10C68000563AC /* SofiaPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736926E10C68000563AC /* SofiaPro-Bold.otf */; };
 		F0B0736F26E10C68000563AC /* SofiaPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736A26E10C68000563AC /* SofiaPro.otf */; };
 		F0B0737026E10C68000563AC /* SofiaPro-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0B0736B26E10C68000563AC /* SofiaPro-SemiBold.otf */; };
@@ -66,7 +66,7 @@
 		D7334A3428CA7D0A009F0D20 /* Fix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fix.swift; sourceTree = "<group>"; };
 		D754036F2964268D0031B34E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D7540374296428ED0031B34E /* Drop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drop-Bridging-Header.h"; sourceTree = "<group>"; };
-		D7540375296443380031B34E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../RN-Drop-App/ios/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D76FC08A299388DB0067447F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D9E9B5CDBF924216A8DD02C7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E3778AB5F0D4487484D0D9E8 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		E985539F14D3B59F38BF1DC7 /* Pods-Drop-DropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drop-DropTests.debug.xcconfig"; path = "Target Support Files/Pods-Drop-DropTests/Pods-Drop-DropTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				D7540375296443380031B34E /* GoogleService-Info.plist */,
+				D76FC08A299388DB0067447F /* GoogleService-Info.plist */,
 				D754036F2964268D0031B34E /* File.swift */,
 				D7334A3428CA7D0A009F0D20 /* Fix.swift */,
 				F0B0736926E10C68000563AC /* SofiaPro-Bold.otf */,
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B0736E26E10C68000563AC /* SofiaPro-Bold.otf in Resources */,
-				D7540376296443380031B34E /* GoogleService-Info.plist in Resources */,
+				D76FC08B299388DB0067447F /* GoogleService-Info.plist in Resources */,
 				F0B0736F26E10C68000563AC /* SofiaPro.otf in Resources */,
 				F0B0737026E10C68000563AC /* SofiaPro-SemiBold.otf in Resources */,
 				F0B0737126E10C68000563AC /* SofiaPro-Light.otf in Resources */,
@@ -545,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -576,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
