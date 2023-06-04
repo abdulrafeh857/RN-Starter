@@ -59,9 +59,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# BUCK
-buck-out/
-\.buckd/
+
 *.keystore
 !debug.keystore
 # built application files
@@ -79,10 +77,10 @@ gen/
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/
-
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
 
 # Bundle artifact
 *.jsbundle
@@ -119,3 +117,8 @@ logs/**
 # HPROF
 # -----
 *.hprof
+
+ios/.xcode.env.local
+.cxx/
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
