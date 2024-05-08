@@ -1,91 +1,50 @@
 {
-  "name": "@abdulrafeh857/RN-Starter",
-  "description": "This is a react native project for RNStarter App.",
-  "version": "1.0.1",
+  "name": "RNBoiler",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "adb": "adb devices",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
     "clean": "cd android && ./gradlew clean && cd ..",
-    "android": "npx react-native run-android",
+    "pod": "cd ios && pod install && cd ..",
+    "test": "jest",
+    "adb": "adb devices",
     "apk": "cd android && ./gradlew assembleRelease && cd ..",
     "aab": "cd android && ./gradlew bundleRelease && cd ..",
-    "ios": "npx react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
-    "pod": "cd ios && pod install && cd ..",
     "both": "yarn android && yarn ios",
     "build:ios": "npx react-native bundle --entry-file='index.js' --bundle-output='./ios/TSStarter/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
     "commit": "npx gitmoji -c",
     "rename": "npx react-native-rename",
-    "start": "react-native start",
     "start:reset": "react-native start --reset-cache",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "appicon": "app-icon generate",
     "appicon-ios": "app-icon generate --platforms=ios",
     "appicon-android": "app-icon generate --platforms=android"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.12.1",
-    "@react-navigation/native": "^6.1.6",
-    "@react-navigation/native-stack": "^6.9.12",
-    "@reduxjs/toolkit": "^1.6.1",
-    "axios": "^0.27.2",
-    "babel-plugin-transform-remove-console": "^6.9.4",
+    "app-icon": "^0.13.2",
     "react": "18.2.0",
-    "react-native": "0.71.8",
-    "react-native-config": "^1.4.4",
-    "react-native-paper": "^4.9.2",
-    "react-native-responsive-dimensions": "^3.1.1",
-    "react-native-safe-area-context": "^4.2.5",
-    "react-native-screens": "^3.13.1",
-    "react-native-vector-icons": "^9.2.0",
-    "react-redux": "^7.2.4"
+    "react-native": "0.74.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
-    "@react-native-community/eslint-config": "^3.2.0",
-    "@tsconfig/react-native": "^2.0.2",
-    "@types/jest": "^29.2.1",
-    "@types/react": "^18.0.24",
-    "@types/react-native": "^0.64.5",
+    "@react-native/babel-preset": "0.74.83",
+    "@react-native/eslint-config": "0.74.83",
+    "@react-native/metro-config": "0.74.83",
+    "@react-native/typescript-config": "0.74.83",
+    "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
-    "babel-jest": "^29.2.1",
-    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-jest": "^29.6.3",
     "eslint": "^8.19.0",
-    "jest": "^29.2.1",
-    "prettier": "^2.4.1",
-    "metro-react-native-babel-preset": "0.73.9",
-    "react-native-codegen": "^0.0.7",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
-    "typescript": "4.8.4"
+    "typescript": "5.0.4"
   },
-  "resolutions": {
-    "@types/react": "^17"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/abdulrafeh857/RN-Starter.git"
-  },
-  "author": "Abdul Rafeh",
-  "license": "MIT",
-  "homepage": "https://github.com/abdulrafeh857/RN-Starter",
-  "keywords": [
-    "react",
-    "react-native",
-    "native",
-    "typescript",
-    "ts-starter",
-    "boilerplate"
-  ],
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+  "engines": {
+    "node": ">=18"
   }
 }
