@@ -12,11 +12,7 @@ const StackNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Splash"
-        screenOptions={{
-          header: props => <Appbar {...props} />
-        }}>
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -25,7 +21,7 @@ const StackNavigator = () => {
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}
-          // {...headerHidden}
+          {...headerHidden}
         />
         <Stack.Screen name="User" component={UserScreen} />
       </Stack.Navigator>

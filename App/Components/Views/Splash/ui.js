@@ -1,13 +1,13 @@
-import React from 'react'
-import useService from './service'
-import useStyles from './styles'
-import { StatusBar, Image, View } from 'react-native'
-import { Screen } from '@Templates'
-import { Colors } from '@Theme'
+import React from 'react';
+import useService from './service';
+import useStyles from './styles';
+import { StatusBar, Image, View } from 'react-native';
+import { Screen } from '@Templates';
+import { Colors } from '@Theme';
 
-const Splash = (props) => {
-  const { } = useService(props)
-  const { container, image } = useStyles()
+const Splash = props => {
+  const {} = useService(props);
+  const { container, image } = useStyles();
 
   return (
     <>
@@ -23,7 +23,7 @@ const Splash = (props) => {
         </View>
       </Screen>
     </>
-  )
-}
+  );
+};
 
-export default Splash
+export default Splash;

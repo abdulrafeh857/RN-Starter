@@ -1,5 +1,5 @@
 const Item = {
-  Key: 'value',
-}
+  Key: 'value'
+};
 
-export default Item
+export default Item;

@@ -1,24 +1,27 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native';
 
-const { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
 
 const useStyles = () =>
   StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
+      alignItems: 'center'
     },
     image: {
       height: 200,
       width: width * 0.8,
       marginTop: height * 0.05,
       marginBottom: height * 0.05,
-      alignSelf: 'center',
+      alignSelf: 'center'
     },
     button: {
-      marginTop: height * 0.1,
+      margin: 10,
       paddingHorizontal: 25,
-    },
-  })
+      paddingVertical: 10,
+      backgroundColor: 'aqua',
+      borderRadius: 10
+    }
+  });
 
-export default useStyles
+export default useStyles;

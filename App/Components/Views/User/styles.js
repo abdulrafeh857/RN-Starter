@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 const useStyles = () =>
   StyleSheet.create({
@@ -10,12 +10,14 @@ const useStyles = () =>
       paddingTop: height * 0.05
     },
     button: {
-      marginTop: height * 0.1,
-      paddingHorizontal: 25
+      margin: 10,
+      paddingHorizontal: 25,
+      paddingVertical: 10,
+      backgroundColor: 'aqua',
+      borderRadius: 10
     },
     text: {
       fontSize: 20,
-      fontWeight: 'bold',
       color: 'black',
       textAlign: 'center',
       marginVertical: 5,

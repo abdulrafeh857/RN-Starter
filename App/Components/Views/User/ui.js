@@ -1,13 +1,13 @@
 import React from 'react';
 import useService from './service';
 import useStyles from './styles';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { Text } from '@Atoms';
 import { Button } from '@Molecules';
 import { Screen } from '@Templates';
 
 const User = props => {
-  const { data, userId, setUserId } = useService(props);
+  const { data, userId, setUserId, user, getData } = useService(props);
   const { button, root, text } = useStyles();
   return (
     <Screen>
@@ -19,8 +19,17 @@ const User = props => {
           <Text style={text}>{data[userId]?.name}</Text>
           <Text style={text}>{data[userId]?.username}</Text>
         </View>
+        <TouchableOpacity
+          style={button}
+          onPress={() => {
+            getData();
+          }}>
+          <Text h5>Get Random User</Text>
+        </TouchableOpacity>
 
-        <Button
+        <Text>User From Redux: {JSON.stringify(user, null, 6)}</Text>
+
+        {/* <Button
           style={button}
           onPress={() => {
             let min = Math.ceil(1);
@@ -29,7 +38,7 @@ const User = props => {
             setUserId(m);
           }}>
           Get Random User
-        </Button>
+        </Button> */}
       </View>
     </Screen>
   );
