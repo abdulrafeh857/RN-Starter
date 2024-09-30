@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <ReduxProvider store={store}>
       <PaperProvider theme={theme as any}>
         <RootNavigator />
+        <></>
       </PaperProvider>
     </ReduxProvider>
   );
