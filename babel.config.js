@@ -28,6 +28,7 @@ module.exports = {
           '@Utils': ['./App/Utils']
         }
       }
-    ]
+    ],
+    'react-native-reanimated/plugin'
   ]
 };
