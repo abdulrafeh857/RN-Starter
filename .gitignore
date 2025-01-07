@@ -88,6 +88,7 @@ gen/
 # CocoaPods
 /ios/Pods/
 
+# Env
 .env
 
 # Logs
@@ -122,3 +123,6 @@ ios/.xcode.env.local
 .cxx/
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
+
+# vendor directory
+/vendor
