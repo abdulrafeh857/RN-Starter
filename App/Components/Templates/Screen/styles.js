@@ -1,17 +1,15 @@
-import { Dimensions, StyleSheet } from 'react-native'
-import { Colors } from 'Theme'
-
-const { width, height } = Dimensions.get('window')
+import { StyleSheet } from 'react-native';
+import { Colors } from 'Theme';
 
 const useStyles = () =>
   StyleSheet.create({
     rootScroll: {
       flexGrow: 1,
-      backgroundColor: Colors.foreground,
+      backgroundColor: Colors.foreground
     },
     root: {
-      flex: 1,
-    },
-  })
+      flex: 1
+    }
+  });
 
-export default useStyles
+export default useStyles;

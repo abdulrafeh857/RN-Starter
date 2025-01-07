@@ -12,11 +12,7 @@ const Screen = props => {
     <>
       <StatusBar backgroundColor={Colors.primary} />
 
-      <SafeAreaView
-        style={{
-          backgroundColor: Colors.primary
-        }}
-      />
+      <SafeAreaView style={{ backgroundColor: Colors.primary }} />
 
       <ScrollView
         {...props}

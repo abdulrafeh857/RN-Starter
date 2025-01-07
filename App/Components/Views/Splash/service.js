@@ -1,5 +1,5 @@
 import { useIsFocused } from '@react-navigation/native';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const useService = props => {
   const f = useIsFocused();

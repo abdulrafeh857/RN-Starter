@@ -1,13 +1,9 @@
-import React from 'react'
-import {} from 'react-native'
-
-
-const useService = (props) => {
+const useService = props => {
   const onContinue = () => {
-    props.navigation.navigate('User')
-  }
+    props.navigation.navigate('User');
+  };
 
-  return { onContinue }
-}
+  return { onContinue };
+};
 
-export default useService
+export default useService;

@@ -18,14 +18,9 @@ const User = props => {
           <Text style={text}>{data[userId]?.name}</Text>
           <Text style={text}>{data[userId]?.username}</Text>
         </View>
-        <TouchableOpacity
-          style={button}
-          onPress={() => {
-            getData();
-          }}>
+        <TouchableOpacity style={button} onPress={() => getData()}>
           <Text h5>Get Random User</Text>
         </TouchableOpacity>
-
         <Text>User From Redux: {JSON.stringify(user, null, 6)}</Text>
       </View>
     </Screen>

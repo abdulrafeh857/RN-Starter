@@ -6,7 +6,7 @@ import { Screen } from '@Templates';
 import { Colors } from '@Theme';
 
 const Splash = props => {
-  const {} = useService(props);
+  useService(props);
   const { container, image } = useStyles();
 
   return (

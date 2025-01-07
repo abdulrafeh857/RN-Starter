@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import useStyles from './styles';
 import { SplashScreen, WelcomeScreen, UserScreen } from '@Views';
-import { Appbar } from '@Organisms';
 
 const Stack = createNativeStackNavigator();
 
