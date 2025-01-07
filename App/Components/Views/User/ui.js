@@ -3,7 +3,6 @@ import useService from './service';
 import useStyles from './styles';
 import { TouchableOpacity, View } from 'react-native';
 import { Text } from '@Atoms';
-import { Button } from '@Molecules';
 import { Screen } from '@Templates';
 
 const User = props => {
@@ -28,17 +27,6 @@ const User = props => {
         </TouchableOpacity>
 
         <Text>User From Redux: {JSON.stringify(user, null, 6)}</Text>
-
-        {/* <Button
-          style={button}
-          onPress={() => {
-            let min = Math.ceil(1);
-            let max = Math.floor(data?.length);
-            let m = Math.floor(Math.random() * (max - min) + min);
-            setUserId(m);
-          }}>
-          Get Random User
-        </Button> */}
       </View>
     </Screen>
   );

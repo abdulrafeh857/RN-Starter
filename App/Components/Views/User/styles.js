@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { Colors } from 'Theme';
 
 const { height } = Dimensions.get('window');
 
@@ -13,7 +14,7 @@ const useStyles = () =>
       margin: 10,
       paddingHorizontal: 25,
       paddingVertical: 10,
-      backgroundColor: 'aqua',
+      backgroundColor: Colors.secondary,
       borderRadius: 10
     },
     text: {
