@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:r": "react-native run-android --variant=release",
     "ios": "react-native run-ios --simulator=\"iPhone 16\"",
+    "ios:r": "react-native run-ios --simulator=\"iPhone 16\" --configuration Release",
     "lint": "eslint .",
     "start": "react-native start",
     "clean": "cd android && ./gradlew clean && cd ..",
