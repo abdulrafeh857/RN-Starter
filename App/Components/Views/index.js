@@ -1,3 +1,6 @@
-export { default as SplashScreen } from './Splash'
-export { default as WelcomeScreen } from './Welcome'
-export { default as UserScreen } from './User'
+export { default as SplashScreen } from './Splash';
+export { default as QrScanScreen } from './QrScan';
+export { default as DriverDetailsScreen } from './DriverDetails';
+export { default as DeviceDetailsScreen } from './DeviceDetails';
+export { default as DashboardScreen } from './Dashboard';
+export { default as ServiceLocationsScreen } from './ServiceLocations';

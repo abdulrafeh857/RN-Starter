@@ -1,1 +1,1 @@
-export { default as scaleFont } from './scaleFont';
+export { default as scaleFont } from './scaleFont'

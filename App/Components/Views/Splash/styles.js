@@ -1,21 +1,22 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { Colors } from 'Theme';
+import { Dimensions, StyleSheet } from 'react-native';
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window');
 
 const useStyles = () =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      alignSelf: 'center',
-    },
     image: {
-      height: 200,
-      width: width * 0.8,
-      marginTop: height * 0.3,
-      alignSelf: 'center',
+      height: 160,
+      width: width * 0.6,
+      alignSelf: 'center'
     },
-  })
+    versionText: {
+      alignSelf: 'center',
+      fontSize: 14,
+      color: Colors.greyText,
+      marginTop: 20,
+      textAlign: 'center'
+    }
+  });
 
-export default useStyles
+export default useStyles;

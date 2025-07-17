@@ -1,5 +1,10 @@
 const useStyles = () => {
-  const headerHidden = { options: { headerShown: false } };
+  const headerHidden = {
+    options: {
+      headerShown: false
+    }
+  };
+
   return { headerHidden };
 };
 
