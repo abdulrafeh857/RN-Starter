@@ -3,16 +3,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const PusherInstance = createSlice({
   name: 'PusherInstance',
   initialState: {
-    data: {}
+    connectionState: 'disconnected'
   },
   reducers: {
     setPusherInstance(state, action) {
       if (action.payload) {
-        // console.debug('\n\n\n\n\n   REDUX MAP LOC      ',action?.payload);
-
-        state.data = action.payload;
+        // Only store serializable data like connection state
+        state.connectionState = action.payload.connectionState || 'connected';
       } else {
-        state.data = null;
+        state.connectionState = 'disconnected';
       }
     }
   }

@@ -7,6 +7,7 @@ import { getDriverData, getDriverDetailsService } from 'Api';
 import { setWarnings } from 'Store/Redux/Warnings';
 import { setGensetId } from 'Store/Redux/GensetId';
 import { setDriverId } from 'Store/Redux/DriverData';
+import VersionCheck from 'react-native-version-check';
 const useService = props => {
   const [modalVisible, setModalVisible] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -17,7 +18,7 @@ const useService = props => {
   let driverId = '';
   useFocusEffect(
     useCallback(() => {
-      funCall();
+      // funCall();
       // checkVersion();
     }, [])
   );

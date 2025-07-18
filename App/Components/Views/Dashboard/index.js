@@ -1,4 +1,11 @@
-import { FlatList, Image, Platform, Text, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  Platform,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import React from 'react';
 import { Screen } from 'Components/Templates';
 import { Header, Pusher } from 'Components/Organisms';
@@ -7,12 +14,15 @@ import useService from './service';
 import { Colors, CardShadowLow } from 'Theme';
 import * as Progress from 'react-native-progress';
 import { StatsView, StatsViewSmall } from 'Components/Molecules';
-import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+import {
+  responsiveHeight,
+  responsiveWidth
+} from 'react-native-responsive-dimensions';
 import ReactNativeModal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSendLocInterval } from 'Components/Atoms';
 import moment from 'moment';
-import { baseGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlerCommon';
+
 import { ActivityIndicator } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { setWarnings } from 'Store/Redux/Warnings';
@@ -115,7 +125,12 @@ const Dashboard = props => {
   }
   return (
     <Screen>
-      <Header rightIcon={'lifebuoy'} onRightPress={() => setModalVisible(true)} leftIcon={'menu'} title={name} status={genId}></Header>
+      <Header
+        rightIcon={'lifebuoy'}
+        onRightPress={() => setModalVisible(true)}
+        leftIcon={'menu'}
+        title={name}
+        status={genId}></Header>
       <View style={{ alignSelf: 'center' }}>
         <Text style={[title, { color: Colors.text }]}>{currTime}</Text>
       </View>
@@ -128,7 +143,9 @@ const Dashboard = props => {
         ]}>
         <View>
           <Text style={headText}>Active From</Text>
-          <Text style={timeText}>{moment(time).format('YYYY-MM-DD HH:mm:ss')}</Text>
+          <Text style={timeText}>
+            {moment(time).format('YYYY-MM-DD HH:mm:ss')}
+          </Text>
         </View>
       </View>
       <View style={halfMain}>
@@ -144,7 +161,15 @@ const Dashboard = props => {
             size={120}
             progress={1}
             unfilledColor={Colors.primary + '50'}
-            color={status == 'Running' ? Colors.success : status == 'Offline' ? Colors.genorange : status == 'Error' ? Colors.redsoft : Colors.primary}
+            color={
+              status == 'Running'
+                ? Colors.success
+                : status == 'Offline'
+                ? Colors.genorange
+                : status == 'Error'
+                ? Colors.redsoft
+                : Colors.primary
+            }
             borderColor={Colors.silver}
             direction={'counter-clockwise'}
             textStyle={progressText}></Progress.Circle>
@@ -173,7 +198,12 @@ const Dashboard = props => {
       <View
         style={[
           flatlistStyle,
-          { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: responsiveWidth(1.7), paddingVertical: responsiveHeight(1.5) }
+          {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: responsiveWidth(1.7),
+            paddingVertical: responsiveHeight(1.5)
+          }
         ]}>
         <TouchableOpacity
           disabled={eventVal != '' ? false : true}
@@ -187,7 +217,12 @@ const Dashboard = props => {
                 dotView,
                 {
                   backgroundColor:
-                    (eventVal != '' && eventVal != null && eventVal != undefined && eventVal != 'null' && eventVal != 'undefined' && event === 'WARNING') ||
+                    (eventVal != '' &&
+                      eventVal != null &&
+                      eventVal != undefined &&
+                      eventVal != 'null' &&
+                      eventVal != 'undefined' &&
+                      event === 'WARNING') ||
                     event === 'SEVERE WARNING'
                       ? Colors.primary
                       : event === 'ERROR'
@@ -199,7 +234,12 @@ const Dashboard = props => {
               name={'alert-outline'}
               size={46}
               color={
-                (eventVal != '' && eventVal != null && eventVal != undefined && eventVal != 'null' && eventVal != 'undefined' && event === 'WARNING') ||
+                (eventVal != '' &&
+                  eventVal != null &&
+                  eventVal != undefined &&
+                  eventVal != 'null' &&
+                  eventVal != 'undefined' &&
+                  event === 'WARNING') ||
                 event === 'SEVERE WARNING'
                   ? Colors.primary
                   : event === 'ERROR'
@@ -211,7 +251,12 @@ const Dashboard = props => {
                 title,
                 {
                   color:
-                    (eventVal != '' && eventVal != null && eventVal != undefined && eventVal != 'null' && eventVal != 'undefined' && event === 'WARNING') ||
+                    (eventVal != '' &&
+                      eventVal != null &&
+                      eventVal != undefined &&
+                      eventVal != 'null' &&
+                      eventVal != 'undefined' &&
+                      event === 'WARNING') ||
                     event === 'SEVERE WARNING'
                       ? Colors.primary
                       : event === 'ERROR'
@@ -224,7 +269,9 @@ const Dashboard = props => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          disabled={event === 'WARNING' || event === 'SEVERE WARNING' ? false : true}
+          disabled={
+            event === 'WARNING' || event === 'SEVERE WARNING' ? false : true
+          }
           onPress={() => {
             setWarnModal(true);
             // setWarn(warn);
@@ -234,15 +281,28 @@ const Dashboard = props => {
               style={[
                 dotView,
                 {
-                  backgroundColor: event === 'WARNING' || event === 'SEVERE WARNING' ? Colors.primary : Colors.greyText
+                  backgroundColor:
+                    event === 'WARNING' || event === 'SEVERE WARNING'
+                      ? Colors.primary
+                      : Colors.greyText
                 }
               ]}></View>
-            <Icon name={'alert-outline'} size={46} color={event === 'WARNING' || event === 'SEVERE WARNING' ? Colors.primary : Colors.text}></Icon>
+            <Icon
+              name={'alert-outline'}
+              size={46}
+              color={
+                event === 'WARNING' || event === 'SEVERE WARNING'
+                  ? Colors.primary
+                  : Colors.text
+              }></Icon>
             <Text
               style={[
                 title,
                 {
-                  color: event === 'WARNING' || event === 'SEVERE WARNING' ? Colors.primary : Colors.text
+                  color:
+                    event === 'WARNING' || event === 'SEVERE WARNING'
+                      ? Colors.primary
+                      : Colors.text
                 }
               ]}>
               Warning
@@ -260,10 +320,14 @@ const Dashboard = props => {
               style={[
                 dotView,
                 {
-                  backgroundColor: event === 'ERROR' ? Colors.red : Colors.greyText
+                  backgroundColor:
+                    event === 'ERROR' ? Colors.red : Colors.greyText
                 }
               ]}></View>
-            <Icon name={'close-circle-outline'} size={46} color={event === 'ERROR' ? Colors.red : Colors.greyText}></Icon>
+            <Icon
+              name={'close-circle-outline'}
+              size={46}
+              color={event === 'ERROR' ? Colors.red : Colors.greyText}></Icon>
             <Text
               style={[
                 title,
@@ -295,7 +359,8 @@ const Dashboard = props => {
                   data={main[1]}
                   // renderItem={renderItem}
                   renderItem={({ item, index }) => {
-                    return item.description === 'Warning' || item.description === 'Error' ? null : ( // </TouchableOpacity> //   </View> //       }}></StatsView> //         width: main[1].length > 2 && index == 3 && index == 4 ? responsiveWidth(25) : responsiveWidth(35) //       style={{ //       }} //             : Colors.text //             ? Colors.redsoft //           ((item?.description === 'ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' //         color: //       titleStyle={{ //       image={{ uri: item?.logo }} //       title={item?.description} //       value={'--'} //       } //           : null //           ? false //         (item?.description === ('ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' //       status={ //     <StatsView //     }}> //       paddingHorizontal: responsiveWidth(1.7) //       paddingVertical: responsiveHeight(1.5), //     style={{ //   <View //   }}> //     setWarn(item?.name); //     setWarnModal(true); //   onPress={() => { //   } //     (item?.description === ('ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' ? false : true //   disabled={ // <TouchableOpacity
+                    return item.description === 'Warning' ||
+                      item.description === 'Error' ? null : ( // </TouchableOpacity> //   </View> //       }}></StatsView> //         width: main[1].length > 2 && index == 3 && index == 4 ? responsiveWidth(25) : responsiveWidth(35) //       style={{ //       }} //             : Colors.text //             ? Colors.redsoft //           ((item?.description === 'ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' //         color: //       titleStyle={{ //       image={{ uri: item?.logo }} //       title={item?.description} //       value={'--'} //       } //           : null //           ? false //         (item?.description === ('ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' //       status={ //     <StatsView //     }}> //       paddingHorizontal: responsiveWidth(1.7) //       paddingVertical: responsiveHeight(1.5), //     style={{ //   <View //   }}> //     setWarn(item?.name); //     setWarnModal(true); //   onPress={() => { //   } //     (item?.description === ('ERROR' || item.name != 'error') && item?.description === 'Warning') || item.name != 'warning' ? false : true //   disabled={ // <TouchableOpacity
                       <View
                         style={{
                           paddingVertical: responsiveHeight(1.5),
@@ -309,13 +374,21 @@ const Dashboard = props => {
                             setAddress(item);
                             setLocModal(true);
                           }}
-                          status={item.name === 'Driver Location' || item.name === 'Genset Location' ? driLoc : item?.value}
+                          status={
+                            item.name === 'Driver Location' ||
+                            item.name === 'Genset Location'
+                              ? driLoc
+                              : item?.value
+                          }
                           value={item?.value != null ? item?.value : '--'}
                           title={item?.description}
                           color={item?.indicator}
                           image={{ uri: item?.logo }}
                           style={{
-                            width: main[1].length > 2 ? responsiveWidth(25) : responsiveWidth(35)
+                            width:
+                              main[1].length > 2
+                                ? responsiveWidth(25)
+                                : responsiveWidth(35)
                           }}></StatsView>
                       </View>
                     );
@@ -356,7 +429,10 @@ const Dashboard = props => {
             onPress={() => {
               openDialer();
             }}>
-            <Icon name="phone-outgoing-outline" size={21} color={Colors.text}></Icon>
+            <Icon
+              name="phone-outgoing-outline"
+              size={21}
+              color={Colors.text}></Icon>
             <Text style={modalBtnText}>Call Genmark</Text>
           </TouchableOpacity>
           <View style={horizontalLine}></View>
@@ -371,7 +447,10 @@ const Dashboard = props => {
                 feature: dataFormated
               });
             }}>
-            <Icon name="map-marker-outline" size={21} color={Colors.text}></Icon>
+            <Icon
+              name="map-marker-outline"
+              size={21}
+              color={Colors.text}></Icon>
             <Text style={modalBtnText}>Service Locations</Text>
           </TouchableOpacity>
         </View>
@@ -447,7 +526,10 @@ const Dashboard = props => {
             mainModalLocView,
             {
               backgroundColor: Colors.white,
-              width: Platform.OS === 'android' ? responsiveWidth(65) : responsiveWidth(85)
+              width:
+                Platform.OS === 'android'
+                  ? responsiveWidth(65)
+                  : responsiveWidth(85)
             }
           ]}>
           <Text style={locTitle}>Open with</Text>
@@ -457,7 +539,10 @@ const Dashboard = props => {
               alignSelf: 'center',
               justifyContent: 'space-between',
               flexDirection: 'row',
-              width: Platform.OS === 'android' ? responsiveWidth(55) : responsiveWidth(75),
+              width:
+                Platform.OS === 'android'
+                  ? responsiveWidth(55)
+                  : responsiveWidth(75),
               alignItems: 'center',
               marginTop: responsiveHeight(1)
             }}>

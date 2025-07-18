@@ -32,7 +32,11 @@ const PusherService = () => {
     // }
   };
   useEffect(() => {
-    if (driver_Id != null || typeof driver_Id != 'undefined' || driver_Id != '') {
+    if (
+      driver_Id != null ||
+      typeof driver_Id != 'undefined' ||
+      driver_Id != ''
+    ) {
       setDriverId(driver_Id);
     } else {
       console.log('\n\n\n in else of driver id');
@@ -122,7 +126,6 @@ const PusherService = () => {
     // props.navigation.navigate('Splash');
   };
   const onConnect = async () => {
-    dispatch(setPusherInstance(pusher));
     try {
       await pusher.init({
         authEndpoint: Config.BASE_URL + 'api/authenticate-pusher/',
@@ -144,21 +147,34 @@ const PusherService = () => {
             dispatch(setWarnings(eventData));
           } else if (event?.eventName === 'private-' + genId + '-status') {
             let eventData = JSON.parse(event?.data);
-            console.log('\n\n\n event from pusher status::  ===  ', eventData?.data);
+            console.log(
+              '\n\n\n event from pusher status::  ===  ',
+              eventData?.data
+            );
             dispatch(setGenStatus(eventData?.data));
             if (eventData?.data?.status === 401) {
               update();
             }
           } else if (event?.eventName === 'private-' + driver_Id + '-logout') {
             let eventData = JSON.parse(event?.data);
-            console.log('\n\n\n event from pusher logout::  ===  ', eventData?.data);
+            console.log(
+              '\n\n\n event from pusher logout::  ===  ',
+              eventData?.data
+            );
 
-            if (eventData?.data?.status === 401 || eventData?.data?.status === 404 || eventData?.data?.status === 204) {
+            if (
+              eventData?.data?.status === 401 ||
+              eventData?.data?.status === 404 ||
+              eventData?.data?.status === 204
+            ) {
               logout();
             }
           } else if (event?.eventName === 'private-' + driver_Id + '-status') {
             let eventData = JSON.parse(event?.data);
-            console.log('\n\n\n event from pusher status::  ===  ', eventData?.data);
+            console.log(
+              '\n\n\n event from pusher status::  ===  ',
+              eventData?.data
+            );
             if (eventData?.data?.status === 401) {
               update();
             }

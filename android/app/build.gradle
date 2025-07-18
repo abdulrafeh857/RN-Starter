@@ -77,13 +77,15 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.rnboiler'
+    namespace 'com.genmark.eu'
     defaultConfig {
-        applicationId 'com.rnboiler'
+        applicationId 'com.genmark.eu'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName '1.0'
+        missingDimensionStrategy 'react-native-camera', 'general'
+
     }
     signingConfigs {
         debug {
