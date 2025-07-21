@@ -4,6 +4,7 @@ import Config from 'react-native-config';
 const api = axios.create();
 
 api.defaults.baseURL = Config.BASE_URL;
+console.log('\n\n\n\n\n BASE URL is:: ', Config.BASE_URL);
 api.interceptors.request.use(
   async config => {
     let token = await Async.getItem(Async.Item.Token);

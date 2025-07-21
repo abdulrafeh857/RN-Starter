@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'react-native-paper';
+import { MD3LightTheme as PaperDefaultTheme } from 'react-native-paper'; // ✅ Better for RN Paper v5+
 
 /*  APP SPECIFIC COLORS  */
 export const Colors = {
@@ -43,15 +44,73 @@ export const FontFamily = {
   SemiBoldItalic: 'TitilliumWeb-SemiBoldItalic'
 };
 
-/*  REACT NATIVE PAPER THEME  */
+/*  FONT CONFIG FOR RN PAPER (MD3)  */
 const fontConfig = {
-  bold: { fontFamily: FontFamily.Bold },
-  semibold: { fontFamily: FontFamily.SemiBold },
-  regular: { fontFamily: FontFamily.Regular },
-  medium: { fontFamily: FontFamily.SemiBold },
-  light: { fontFamily: FontFamily.Light },
-  thin: { fontFamily: FontFamily.ExtraLight }
+  displayLarge: {
+    fontFamily: FontFamily.Bold,
+    fontWeight: '700',
+    letterSpacing: 0.5
+  },
+  displayMedium: {
+    fontFamily: FontFamily.SemiBold,
+    fontWeight: '600',
+    letterSpacing: 0.25
+  },
+  displaySmall: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '500'
+  },
+  headlineLarge: {
+    fontFamily: FontFamily.Bold,
+    fontWeight: '700'
+  },
+  headlineMedium: {
+    fontFamily: FontFamily.SemiBold,
+    fontWeight: '600'
+  },
+  headlineSmall: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '500'
+  },
+  bodyLarge: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '400'
+  },
+  bodyMedium: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '400'
+  },
+  bodySmall: {
+    fontFamily: FontFamily.Light,
+    fontWeight: '300'
+  },
+  labelLarge: {
+    fontFamily: FontFamily.SemiBold,
+    fontWeight: '600'
+  },
+  labelMedium: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '400'
+  },
+  labelSmall: {
+    fontFamily: FontFamily.ExtraLight,
+    fontWeight: '200'
+  },
+  titleLarge: {
+    fontFamily: FontFamily.SemiBold,
+    fontWeight: '600'
+  },
+  titleMedium: {
+    fontFamily: FontFamily.Regular,
+    fontWeight: '500'
+  },
+  titleSmall: {
+    fontFamily: FontFamily.Light,
+    fontWeight: '300'
+  }
 };
+
+/*  SHADOWS  */
 export const CardShadow = {
   shadowColor: Colors.text,
   shadowOffset: {
@@ -60,9 +119,9 @@ export const CardShadow = {
   },
   shadowOpacity: 0.27,
   shadowRadius: 4.65,
-
   elevation: 6
 };
+
 export const CardShadowLow = {
   shadowColor: Colors.text,
   shadowOffset: {
@@ -71,20 +130,21 @@ export const CardShadowLow = {
   },
   shadowOpacity: 0.2,
   shadowRadius: 1.41,
-
   elevation: 2
 };
 
+/*  FINAL CUSTOM THEME  */
 const colorsConfig = {
-  ...DefaultTheme.colors,
+  ...PaperDefaultTheme.colors,
   primary: Colors.primary,
-  accent: Colors.secondary,
-  text: Colors.text
+  secondary: Colors.secondary,
+  text: Colors.text,
+  background: Colors.background
 };
 
 export const theme = {
-  ...DefaultTheme,
+  ...PaperDefaultTheme,
   roundness: 22,
-  fonts: fontConfig,
-  colors: colorsConfig
+  colors: colorsConfig,
+  fonts: fontConfig // ✅ Must follow MD3 keys
 };

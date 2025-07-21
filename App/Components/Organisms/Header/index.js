@@ -6,7 +6,18 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
 const Header = props => {
-  const { leftIcon, onLeftPress, rightIcon, onRightPress, title, style, status, drawerButton, iconLeft, drawer } = props;
+  const {
+    leftIcon,
+    onLeftPress,
+    rightIcon,
+    onRightPress,
+    title,
+    style,
+    status,
+    drawerButton,
+    iconLeft,
+    drawer
+  } = props;
   const navigation = useNavigation();
   return (
     <View style={styles.main}>
@@ -25,7 +36,10 @@ const Header = props => {
         onPress={() => {
           leftIcon === 'menu' ? navigation.openDrawer() : navigation.goBack();
         }}>
-        <Icon name={leftIcon ? leftIcon : 'chevron-left'} size={25} color={Colors.text}></Icon>
+        <Icon
+          name={leftIcon ? leftIcon : 'chevron-left'}
+          size={25}
+          color={Colors.text}></Icon>
       </TouchableOpacity>
       {/* )
       } */}
@@ -48,7 +62,10 @@ const Header = props => {
           }
         ]}
         onPress={onRightPress ? onRightPress : () => {}}>
-        <Icon name={rightIcon || 'chevron-right'} size={25} color={rightIcon ? Colors.text : Colors.transparent}></Icon>
+        <Icon
+          name={rightIcon || 'chevron-right'}
+          size={25}
+          color={rightIcon ? Colors.text : Colors.transparent}></Icon>
       </TouchableOpacity>
     </View>
   );

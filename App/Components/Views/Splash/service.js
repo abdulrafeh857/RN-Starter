@@ -18,7 +18,7 @@ const useService = props => {
   let driverId = '';
   useFocusEffect(
     useCallback(() => {
-      // funCall();
+      funCall();
       // checkVersion();
     }, [])
   );
@@ -41,15 +41,34 @@ const useService = props => {
       console.error('Version check failed:', error);
     }
   };
-  const funCall = async () => {
-    batchId = await Async.getItem(Async.Item.batchId);
-    driverId = await Async.getItem(Async.Item.driverId);
-    dispatch(setDriverId(await Async.getItem(Async.Item.driverId)));
-    setVisible(true);
-    setTimeout(() => {
-      // getCurrDriver();
+  // const funCall = async () => {
+  //   batchId = await Async.getItem(Async.Item.batchId);
+  //   driverId = await Async.getItem(Async.Item.driverId);
+  //   dispatch(setDriverId(await Async.getItem(Async.Item.driverId)));
+  //   setVisible(true);
+  //   setTimeout(() => {
+  //     // getCurrDriver();
 
+  //     updateState(batchId);
+  //     dispatch(setGensetId(batchId));
+  //   }, 2500);
+  // };
+  const funCall = async () => {
+    const batchId = await Async.getItem(Async.Item.batchId);
+    const driverId = await Async.getItem(Async.Item.driverId);
+
+    console.log('\n\n\n batchId is::', batchId, driverId);
+
+    if (!batchId || !driverId) {
+      props.navigation.navigate('QrScan');
+      return;
+    }
+
+    setVisible(true);
+
+    setTimeout(() => {
       updateState(batchId);
+      dispatch(setDriverId(driverId));
       dispatch(setGensetId(batchId));
     }, 2500);
   };
