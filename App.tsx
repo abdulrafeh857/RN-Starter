@@ -14,7 +14,6 @@ import { Linking, Text, View } from 'react-native';
 import { FlashMessage as FlMessage } from './App/Components/Molecules';
 import ModalAppUpdate from './App/Components/Molecules/ModalAppUpdate';
 import ErrorBoundary from './App/Components/ErrorBoundary';
-
 const App: React.FC = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [storeUrl, setStoreUrl] = useState('');

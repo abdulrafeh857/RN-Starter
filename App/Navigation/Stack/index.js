@@ -12,9 +12,8 @@ import {
   ServiceLocationsScreen
 } from '@Views';
 import { Colors } from 'Theme';
-import Dashboard from 'Components/Views/Dashboard';
 import { Pusher } from 'Components/Organisms';
-
+import Drawer from '../Drawer';
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
@@ -84,7 +83,7 @@ const StackNavigator = () => {
         />
         <Stack.Screen
           name="Dashboard"
-          component={Dashboard}
+          component={Drawer}
           options={{
             ...headerHidden,
             animationEnabled: Platform.OS !== 'android'

@@ -3,7 +3,7 @@ import React from 'react';
 import { Colors, FontFamily } from 'Theme';
 import { responsiveWidth } from 'react-native-responsive-dimensions';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 
 const Header = props => {
   const {
@@ -14,35 +14,30 @@ const Header = props => {
     title,
     style,
     status,
-    drawerButton,
+    drawerButton, // optional prop
     iconLeft,
-    drawer
+    drawer // ← make sure to pass this as true only on Dashboard screen
   } = props;
+
   const navigation = useNavigation();
+
+  const handleLeftPress = () => {
+    if (drawer) {
+      navigation.dispatch(DrawerActions.openDrawer());
+    } else {
+      navigation.goBack();
+    }
+  };
+
   return (
     <View style={styles.main}>
-      {/* {drawer ? (
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={drawerButton}
-          onPress={() => {
-            navigation.openDrawer();
-          }}>
-          <Icon name={'menu'} size={25.5} color={Colors.white}></Icon>
-        </TouchableOpacity>
-      ) : ( */}
-      <TouchableOpacity
-        style={styles.leftIcon}
-        onPress={() => {
-          leftIcon === 'menu' ? navigation.openDrawer() : navigation.goBack();
-        }}>
+      <TouchableOpacity style={styles.leftIcon} onPress={handleLeftPress}>
         <Icon
-          name={leftIcon ? leftIcon : 'chevron-left'}
+          name={leftIcon ? leftIcon : drawer ? 'menu' : 'chevron-left'}
           size={25}
-          color={Colors.text}></Icon>
+          color={Colors.text}
+        />
       </TouchableOpacity>
-      {/* )
-      } */}
 
       <View>
         {title && (
@@ -50,22 +45,23 @@ const Header = props => {
             {title}
           </Text>
         )}
-
         {status && <Text style={[styles.statusStyle, style]}>{status}</Text>}
       </View>
+
       <TouchableOpacity
-        disabled={rightIcon ? false : true}
+        disabled={!rightIcon}
         style={[
           styles.leftIcon,
           {
             backgroundColor: rightIcon ? Colors.silver : Colors.transparent
           }
         ]}
-        onPress={onRightPress ? onRightPress : () => {}}>
+        onPress={onRightPress ?? (() => {})}>
         <Icon
           name={rightIcon || 'chevron-right'}
           size={25}
-          color={rightIcon ? Colors.text : Colors.transparent}></Icon>
+          color={rightIcon ? Colors.text : Colors.transparent}
+        />
       </TouchableOpacity>
     </View>
   );

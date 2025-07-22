@@ -127,6 +127,7 @@ const Dashboard = props => {
     <Screen>
       <Header
         rightIcon={'lifebuoy'}
+        drawer={true}
         onRightPress={() => setModalVisible(true)}
         leftIcon={'menu'}
         title={name}
